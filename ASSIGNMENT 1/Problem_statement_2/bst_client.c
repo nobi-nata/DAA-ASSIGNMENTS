@@ -2,7 +2,19 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+// void inorder(node_t *p)
+// {
+//     if (p == NULL)
+//     {
+//         return;
+//     }
+//     else
+//     {
+//         inorder(p->left);
+//         printf(" %d ", p->key);
+//         inorder(p->right);
+//     }
+// }
 // Copies a simple integer array to the data structure
 void copy_array(bst_t *dst, const int *src, int n)
 {
@@ -10,6 +22,7 @@ void copy_array(bst_t *dst, const int *src, int n)
     for (int i = 0; i < n; ++i)
     {
         c = 0;
+
         insert(dst, src[i], &c);
     }
 }
@@ -59,9 +72,11 @@ int main()
     int a[] = {6, 3, 7, 4, 8, 1, 5, 9, 2, 0};
     copy_array(&b, a, 10);
     int c = 0;
+
     for (int i = 0; i < 10; ++i)
     {
         c = 0;
+
         assert(search(&b, a[i], &c) == a[i]);
     }
     c = 0;
